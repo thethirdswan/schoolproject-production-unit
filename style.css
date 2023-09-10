@@ -42,7 +42,11 @@ main {
     }
 
     #makanan, #minuman {
-        /*width: 50% !important;*/
         text-align: center;
+        
     }
 }
+
+.carousel-inner > .carousel-item > img {
+        height: 430px;
+    }
