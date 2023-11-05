@@ -53,3 +53,12 @@ main {
 .carousel-inner > .carousel-item > img {
         height: 456px;
 }
+
+#bertanya, #memesan {
+    text-align: left;
+}
+
+footer {
+    background-color: #4d648d;
+    color: wheat;
+}

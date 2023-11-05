@@ -1,14 +1,11 @@
-const resize_ob = new ResizeObserver(function(entries) {
-	// since we are observing only a single element, so we access the first element in entries array
-	let rect = entries[0].contentRect;
+var radiotanya = document.getElementsByName('tanya');
+var bertanya = document.getElementById('bertanya');
 
-	// current width & height
-	let width = rect.width;
-	let height = rect.height;
-
-	console.log('Current Width : ' + width);
-	console.log('Current Height : ' + height);
-});
-
-// start observing for resize
-resize_ob.observe(document.querySelector("#minuman"));
+function tanya() {
+	var tanda = document.querySelector('input[name="tanya"]:checked').value;
+	if (tanda == "Menu") {
+		window.location.href = "https://wa.me/6281770219886?text=Menu%20hari%20ini%20apa%20aja,%20kak?"
+	} else {
+		window.location.href = "https://wa.me/6281770219886?text=Bisa%20ngeprint%20ngga,%20kak?"
+	}
+}

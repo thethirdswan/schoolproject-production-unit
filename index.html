@@ -19,7 +19,7 @@
                 Unit Produksi SMK Negeri 2 Tabanan,
             </p>
             <p>
-                Dimana makanan, minuman, dan peralatan sekolah dijual oleh siswa, untuk siswa!
+                Dimana makanan, minuman, dan peralatan sekolah dijual oleh siswa, untuk siswa! Kami juga menyediakan jasa print dokumen.
             </p>
             <p>
                 Berikut adalah menu tetap di Duta Cafetaria;
@@ -144,11 +144,53 @@
                     </div>
                 </div>
             </div>
+            <p>Ingin</p>
+            <p><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bertanya">Bertanya</button>, atau <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="pesan">Memesan</button>?</p>
+            <p>Kami buka dari jam 7:30 sampai 15:00, Senin - Jumat.</p>
+            <div class="modal fade" id="bertanya" tabindex="-1" aria-labelledby="bertanya" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="bertanya">Bertanya</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Anda ingin menanyakan tentang...</p>
+                            <input type="radio" id="radiomenu" name="tanya" value="Menu">
+                            <label for="radiomenu">Menu</label><br>
+                            <input type="radio" id="radioprint" name="tanya" value="Print">
+                            <label for="radioprint">Print</label><br>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button onclick="tanya()" type="button" class="btn btn-primary" data-bs-dismiss="modal">Tanyakan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="memesan" tabindex="-1" aria-labelledby="memesan" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="memesan">Memesan</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Pesan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <em>
                 <p>BETA</p>
                 <p>Current state of the product is not representation of final product.</p>
+                <p>&#169 <a href="https://thethirdswan.github.io">Arya Suwandika</a>, untuk <a href="https://smkn2tabanan.sch.id/">SMK Negeri 2 Tabanan</a>.</p>
             </em>
         </footer>
         <script src="script.js"></script>
