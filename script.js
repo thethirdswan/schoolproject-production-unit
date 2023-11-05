@@ -16,3 +16,14 @@ function pesan() {
 		console.log(checkbox.value)
 	});
 }
+
+function showfield(checkbox) {
+	var box = checkbox.id;
+	var field = 'txt' + box;
+	if (document.getElementById(field).style.display == 'none') {
+		document.getElementById(field).style.display = 'block'
+	} else {
+		document.getElementById(field).style.display = 'none'
+	}
+
+}

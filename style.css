@@ -58,6 +58,10 @@ main {
     text-align: left;
 }
 
+.input {
+    width: 100%;
+}
+
 footer {
     background-color: #4d648d;
     color: wheat;
