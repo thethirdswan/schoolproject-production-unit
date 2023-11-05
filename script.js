@@ -9,3 +9,10 @@ function tanya() {
 		window.location.href = "https://wa.me/6281770219886?text=Bisa%20ngeprint%20ngga,%20kak?"
 	}
 }
+
+function pesan() {
+	var pesanan = document.querySelectorAll('input[name="order"]:checked');
+	pesanan.forEach((checkbox) => {
+		console.log(checkbox.value)
+	});
+}
