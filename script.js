@@ -1,6 +1,3 @@
-var radiotanya = document.getElementsByName('tanya');
-var bertanya = document.getElementById('bertanya');
-
 function tanya() {
 	var tanda = document.querySelector('input[name="tanya"]:checked').value;
 	if (tanda == "Menu") {
@@ -12,9 +9,11 @@ function tanya() {
 
 function pesan() {
 	var pesanan = document.querySelectorAll('input[name="order"]:checked');
+	var message = "https://wa.me/6281770219886?text="
 	pesanan.forEach((checkbox) => {
 		console.log(checkbox.value)
 	});
+	checkbox();
 }
 
 function showfield(checkbox) {
@@ -26,4 +25,13 @@ function showfield(checkbox) {
 		document.getElementById(field).style.display = 'none'
 	}
 
+}
+
+window.addEventListener("load", checkbox);
+
+function checkbox() {
+	var pesanan = document.querySelectorAll('input[name="order"]:checked');
+	pesanan.forEach((box) => {
+		box.checked = false;
+	})
 }

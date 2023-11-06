@@ -173,11 +173,10 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="memesan">Memesan</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
                         </div>
                         <div class="modal-body">
                             <p>Anda ingin memesan...</p>
-                            <div class="float-start w-50">
+                            <div class="float-start w-50 p-2">
                                 <h5>Makanan</h5>
                                 <input onclick="showfield(this)" type="checkbox" id="nasi" name="order" value="Nasi">
                                 <label for="nasi">Nasi</label>
@@ -213,7 +212,7 @@
                                     <input id="txtmiekuahtelur" style="display: none;" class="input"><br>
                                 </div>
                             </div>
-                            <div class="float-end w-50">
+                            <div class="float-end w-50 p-2">
                                 <h5>Minuman</h5>
                                 <input onclick="showfield(this)" type="checkbox" id="aqua" name="order" value="aqua">
                                 <label for="aqua">Aqua</label>
@@ -260,6 +259,13 @@
                                 <input onclick="showfield(this)" type="checkbox" id="sunrise" name="order" value="Sunrise">
                                 <label for="sunrise">Sunrise</label>
                                 <input id="txtsunrise" style="display: none;" class="input"><br>
+                            </div>
+                            <div id="identitas">
+                                <span></span>
+                                <p>Dikirim ke...</p>
+                                <input id="lokasi">
+                                <p>Dengan atas nama...</p>
+                                <input id="nama">
                             </div>
                         </div>
                         <div class="modal-footer">
