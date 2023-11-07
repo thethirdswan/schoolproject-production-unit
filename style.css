@@ -3,6 +3,7 @@
 body {
     font-family: 'Poppins', sans-serif !important;
     margin: 0;
+    min-height: 100vh;
 }
 
 header {
@@ -64,5 +65,11 @@ main {
 
 footer {
     background-color: #4d648d;
+    color: wheat;
+    position: sticky;
+    top: 100vh;
+}
+
+.link {
     color: wheat;
 }
