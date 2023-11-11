@@ -32,7 +32,7 @@ function identity() {
 	lokasi.value = storagelokasi
 }
 
-// order prototype
+// order
 function pesan() {
 	var nama = document.getElementById("nama").value;
 	var lokasi = document.getElementById("lokasi").value;
