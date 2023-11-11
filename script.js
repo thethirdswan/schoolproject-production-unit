@@ -1,5 +1,5 @@
 //to reset selected menu
-// window.addEventListener("load", checkbox);
+window.addEventListener("load", checkbox);
 window.addEventListener("load", identity);
 
 if (localStorage.getItem("Nama") == null) {
