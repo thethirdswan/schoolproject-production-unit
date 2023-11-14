@@ -1,4 +1,4 @@
-//to reset selected menu
+// reset menu, mengambil identitas
 window.addEventListener("load", checkbox);
 window.addEventListener("load", identity);
 
@@ -13,7 +13,7 @@ if (localStorage.getItem("Lokasi") == null) {
 var jam = document.getElementById("jam")
 var sekarang = document.getElementById("sekarang");
 
-//for asking
+//untuk bertanya
 function tanya() {
 	var tanda = document.querySelector('input[name="tanya"]:checked').value;
 	if (tanda == "Menu") {
@@ -23,6 +23,7 @@ function tanya() {
 	}
 }
 
+// memuat identitas
 function identity() {
 	var nama = document.getElementById("nama")
 	var lokasi = document.getElementById("lokasi")
@@ -49,8 +50,7 @@ function pesan() {
 	} else if (pesanan.length == 0) {
 		window.alert("Anda belum memilih menu untuk dipesan!")
 	} else {
-		// var message = "https://wa.me/6281770219886?text=Nama%20:%20" + nama + "\nDikirim%20ke%20:%20" + lokasi + "\nKapan%20dikirim%20:%20" + waktu + "\nOrder%20:%20"
-		var message = "https://wa.me/6282158566320?text=Nama%20:%20" + nama + "%0ADikirim%20ke%20:%20" + lokasi + "%0AKapan%20dikirim%20:%20" + waktu + "%0AOrder%20:%20"
+		var message = "https://wa.me/6281770219886?text=Nama%20:%20" + nama + "%0ADikirim%20ke%20:%20" + lokasi + "%0AKapan%20dikirim%20:%20" + waktu + "%0AOrder%20:%20"
 		if (rememberidentity.checked == true) {
 			localStorage.setItem("Nama", nama)
 			localStorage.setItem("Lokasi", lokasi)
@@ -64,7 +64,7 @@ function pesan() {
 	}
 }
 
-// showing fields of each menu
+// menunjukkan kolom jumlah menu
 function showfield(checkbox) {
 	var box = checkbox.id;
 	var field = 'txt' + box;
@@ -76,7 +76,7 @@ function showfield(checkbox) {
 
 }
 
-//reset checked menu
+//reset menu yang di ceklis
 function checkbox() {
 	var pesanan = document.querySelectorAll('input[name="order"]:checked');
 	pesanan.forEach((box) => {
@@ -84,11 +84,11 @@ function checkbox() {
 	})
 }
 
-// checks if jam is selected, if selected will show field for when to deliver
+// cek jika jam dipilih, jika dipilih menampilkan kolom untuk waktu antar
 jam.addEventListener("click", function check() {
 	document.getElementById("txtjam").style.display = 'block'
 })
-// else it will disappear and reset
+// selain itu akan dihilangkan
 sekarang.addEventListener("click", function check() {
 	document.getElementById("txtjam").style.display = 'none'
 	document.getElementById("txtjam").value = ''
