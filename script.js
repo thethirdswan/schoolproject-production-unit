@@ -61,6 +61,7 @@ function pesan() {
 		});
 		checkbox();
 		window.open(message);
+		location.reload();
 	}
 }
 
