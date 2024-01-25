@@ -1,3 +1,7 @@
+//mengaktifkan popover
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
 // reset menu, mengambil identitas
 window.addEventListener("load", checkbox);
 window.addEventListener("load", identity);
