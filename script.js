@@ -103,4 +103,10 @@ sekarang.addEventListener("click", function check() {
 //total prototype
 total.addEventListener("click", function total() {
 	console.log("total is 0");
+	var pesanan = document.querySelectorAll('input[name="order"]:checked');
+	pesanan.forEach((checkbox) => {
+		var jumlah = "txt" + checkbox.id;
+		console.log(pesanan);
+		console.log(jumlah)
+	});
 })
