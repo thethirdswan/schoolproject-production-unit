@@ -13,6 +13,8 @@ if (localStorage.getItem("Lokasi") == null) {
 var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
 var ceklismenu = document.querySelectorAll('input[name="order"]');
+var txttotal = document.getElementById("total")
+var jumlahtotal = 0;
 
 //untuk bertanya
 function tanya() {
@@ -98,7 +100,17 @@ sekarang.addEventListener("click", function check() {
 
 // total prototype
 ceklismenu.forEach((menu) => {
+	var jumlahmenu = "txt" + menu.id;
 	menu.addEventListener("click", function total() {
-		console.log("menu checked");
+		if (menu.checked == true) {
+			switch (menu.value) {
+				case "Nasi Goreng Biasa":
+					jumlahtotal += 8000 * document.getElementById(jumlahmenu).value;
+					txttotal.innerText = jumlahtotal;
+					break;
+			}
+		} else {
+			console.log("menu unchecked");
+		}
 	})
 })
