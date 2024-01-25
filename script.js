@@ -14,8 +14,9 @@ if (localStorage.getItem("Lokasi") == null) {
 	localStorage.setItem("Lokasi", "")
 }
 
-var jam = document.getElementById("jam")
+var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
+var total = document.getElementById("totalbutton");
 
 //untuk bertanya
 function tanya() {
@@ -97,4 +98,9 @@ jam.addEventListener("click", function check() {
 sekarang.addEventListener("click", function check() {
 	document.getElementById("txtjam").style.display = 'none'
 	document.getElementById("txtjam").value = ''
+})
+
+//total prototype
+total.addEventListener("click", function total() {
+	console.log("total is 0");
 })
