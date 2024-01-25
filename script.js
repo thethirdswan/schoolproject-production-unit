@@ -1,7 +1,3 @@
-//mengaktifkan popover
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-
 // reset menu, mengambil identitas
 window.addEventListener("load", checkbox);
 window.addEventListener("load", identity);
@@ -16,7 +12,7 @@ if (localStorage.getItem("Lokasi") == null) {
 
 var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
-var total = document.getElementById("totalbutton");
+var ceklismenu = document.querySelectorAll('input[name="order"]');
 
 //untuk bertanya
 function tanya() {
@@ -100,13 +96,9 @@ sekarang.addEventListener("click", function check() {
 	document.getElementById("txtjam").value = ''
 })
 
-//total prototype
-total.addEventListener("click", function total() {
-	console.log("total is 0");
-	var pesanan = document.querySelectorAll('input[name="order"]:checked');
-	pesanan.forEach((checkbox) => {
-		var jumlah = "txt" + checkbox.id;
-		console.log(pesanan);
-		console.log(jumlah)
-	});
+// total prototype
+ceklismenu.forEach((menu) => {
+	menu.addEventListener("click", function total() {
+		console.log("menu checked");
+	})
 })
