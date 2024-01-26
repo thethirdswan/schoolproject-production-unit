@@ -100,17 +100,35 @@ sekarang.addEventListener("click", function check() {
 
 // total prototype
 ceklismenu.forEach((menu) => {
-	var jumlahmenu = "txt" + menu.id;
-	menu.addEventListener("click", function total() {
-		if (menu.checked == true) {
-			switch (menu.value) {
-				case "Nasi Goreng Biasa":
-					jumlahtotal += 8000 * document.getElementById(jumlahmenu).value;
-					txttotal.innerText = jumlahtotal;
-					break;
+	var txtjumlahmenu = "txt" + menu.id;
+	var jumlahmenu = document.getElementById(txtjumlahmenu);
+	jumlahmenu.addEventListener("input", function total() {
+		// if (menu.checked == true) {
+			if (jumlahmenu.value == "" || jumlahmenu.value == "0") {
+				jumlahtotal = 0
+				txttotal.innerText = jumlahtotal
+			} else {
+				switch (menu.value) {
+					case "Nasi Goreng Biasa":
+						jumlahtotal = jumlahtotal + 8000 * jumlahmenu.value;
+						txttotal.innerText = jumlahtotal;
+						break;
+				}
 			}
-		} else {
-			console.log("menu unchecked");
-		}
+		// } else {
+			// console.log("menu unchecked");
+		// }
 	})
+	// menu.addEventListener("click", function total() {
+	// 	if (menu.checked == true) {
+	// 		switch (menu.value) {
+	// 			case "Nasi Goreng Biasa":
+	// 				jumlahtotal += 8000 * jumlahmenu.value;
+	// 				txttotal.innerText = jumlahtotal;
+	// 				break;
+	// 		}
+	// 	} else {
+	// 		console.log("menu unchecked");
+	// 	}
+	// })
 })
