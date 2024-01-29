@@ -13,7 +13,8 @@ if (localStorage.getItem("Lokasi") == null) {
 var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
 var ceklismenu = document.querySelectorAll('input[name="order"]');
-var txttotal = document.getElementById("total")
+var txttotal = document.getElementById("total");
+var cekliscatatan = document.getElementById("note")
 var jumlahtotal = 0;
 
 //untuk bertanya
@@ -62,6 +63,9 @@ function pesan() {
 			var jumlah = "txt" + checkbox.id;
 			message = message + "%0A" + checkbox.value + "%20" + document.getElementById(jumlah).value + "x"
 		});
+		if (cekliscatatan.checked == true) {
+			message = message + "%0A" + "Catatan: " + document.getElementById("txtnote").value
+		}
 		checkbox();
 		window.open(message);
 		location.reload();
@@ -80,12 +84,13 @@ function showfield(checkbox) {
 
 }
 
-//reset menu yang di ceklis
+//reset ceklis
 function checkbox() {
 	var pesanan = document.querySelectorAll('input[name="order"]:checked');
 	pesanan.forEach((box) => {
 		box.checked = false;
 	})
+	cekliscatatan.checked = false;
 }
 
 // cek jika jam dipilih, jika dipilih menampilkan kolom untuk waktu antar
@@ -96,6 +101,15 @@ jam.addEventListener("click", function check() {
 sekarang.addEventListener("click", function check() {
 	document.getElementById("txtjam").style.display = 'none'
 	document.getElementById("txtjam").value = ''
+})
+
+//menampilkan kolom catatan
+cekliscatatan.addEventListener("click", function check() {
+	if (cekliscatatan.checked == true) {
+		document.getElementById("txtnote").style.display = 'block'
+	} else {
+		document.getElementById("txtnote").style.display = 'none'
+	}
 })
 
 // total prototype
