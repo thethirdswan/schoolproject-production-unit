@@ -13,15 +13,19 @@ if (localStorage.getItem("Lokasi") == null) {
 var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
 var ceklismenu = document.querySelectorAll('input[name="order"]');
+var radiomenu = document.getElementById("radiomenu");
+var radioprint = document.getElementById("radioprint");
 var txttotal = document.getElementById("total");
 var cekliscatatan = document.getElementById("note")
 var jumlahtotal = 0;
 
 //untuk bertanya
 function tanya() {
+	var message;
 	var tanda = document.querySelector('input[name="tanya"]:checked').value;
 	if (tanda == "Menu") {
-		window.open("https://wa.me/6281770219886?text=Menu%20hari%20ini%20apa%20aja,%20kak?");
+		message = "https://wa.me/6281770219886?text=Menu%20hari%20ini%20apa%20aja,%20kak?"
+		window.open(message);
 	} else {
 		window.open("https://wa.me/6281770219886?text=Bisa%20ngeprint%20ngga,%20kak?");
 	}
@@ -64,7 +68,7 @@ function pesan() {
 			message = message + "%0A" + checkbox.value + "%20" + document.getElementById(jumlah).value + "x"
 		});
 		if (cekliscatatan.checked == true) {
-			message = message + "%0A" + "Catatan: " + document.getElementById("txtnote").value
+			message = message + "%0A" + "Catatan:%20" + document.getElementById("txtnote").value
 		}
 		checkbox();
 		window.open(message);
@@ -91,6 +95,7 @@ function checkbox() {
 		box.checked = false;
 	})
 	cekliscatatan.checked = false;
+	radiomenu.checked = true;
 }
 
 // cek jika jam dipilih, jika dipilih menampilkan kolom untuk waktu antar
@@ -110,6 +115,15 @@ cekliscatatan.addEventListener("click", function check() {
 	} else {
 		document.getElementById("txtnote").style.display = 'none'
 	}
+})
+
+// tampil menu print prototype
+radiomenu.addEventListener("click", function check() {
+	document.getElementById("containerprint").style.display = 'none';
+})
+
+radioprint.addEventListener("click", function check() {
+	document.getElementById("containerprint").style.display = 'block';
 })
 
 // total prototype
