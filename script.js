@@ -31,7 +31,9 @@ function tanya() {
 		var tipe = document.querySelector('input[name="tipe"]:checked').value;
 		var jumlahlembar = document.getElementById("jumlahlembar").value;
 		message = "https://wa.me/6281770219886?text=Saya%20mau%20ngeprint%20dengan%20keterangan%20seperti%20berikut:%20%0AKertas%20:%20" + kertas + "%0ATipe%20print%20:%20" + tipe + "%0APerkiraan%20lembar%20dokumen%20:%20" + jumlahlembar + "%0ABisa%20ngga%20kak?";
+		checkbox()
 		window.open(message);
+		location.reload();
 	}
 }
 
