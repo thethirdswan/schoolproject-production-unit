@@ -12,12 +12,9 @@ if (localStorage.getItem("Lokasi") == null) {
 
 var jam = document.getElementById("jam");
 var sekarang = document.getElementById("sekarang");
-var ceklismenu = document.querySelectorAll('input[name="order"]');
 var radiomenu = document.getElementById("radiomenu");
 var radioprint = document.getElementById("radioprint");
-var txttotal = document.getElementById("total");
 var cekliscatatan = document.getElementById("note")
-var jumlahtotal = 0;
 
 //untuk bertanya
 function tanya() {
@@ -30,7 +27,7 @@ function tanya() {
 		var kertas = document.querySelector('input[name="kertas"]:checked').value;
 		var tipe = document.querySelector('input[name="tipe"]:checked').value;
 		var jumlahlembar = document.getElementById("jumlahlembar").value;
-		message = "https://wa.me/6281770219886?text=Saya%20mau%20ngeprint%20dengan%20keterangan%20seperti%20berikut:%20%0AKertas%20:%20" + kertas + "%0ATipe%20print%20:%20" + tipe + "%0APerkiraan%20lembar%20dokumen%20:%20" + jumlahlembar + "%0ABisa%20ngga%20kak?";
+		message = "https://wa.me/6281770219886?text=Saya%20mau%20ngeprint%20dengan%20keterangan%20seperti%20berikut:%20%0AKertas%20:%20" + kertas + "%0ATipe%20print%20:%20" + tipe + "%0APerkiraan%20lembar%20dokumen%20:%20" + jumlahlembar + "%0AKira-kira%20biayanya%20berapa%20kak?";
 		checkbox()
 		window.open(message);
 		location.reload();
@@ -76,6 +73,7 @@ function pesan() {
 		if (cekliscatatan.checked == true) {
 			message = message + "%0A" + "Catatan:%20" + document.getElementById("txtnote").value
 		}
+		message = message + "%0AKira-kira%20berapa%20totalnya%20kak?";
 		checkbox();
 		window.open(message);
 		location.reload();
@@ -123,43 +121,10 @@ cekliscatatan.addEventListener("click", function check() {
 	}
 })
 
-// tampil menu print prototype
+// tampil menu print
 radiomenu.addEventListener("click", function check() {
 	document.getElementById("containerprint").style.display = 'none';
 })
-
 radioprint.addEventListener("click", function check() {
 	document.getElementById("containerprint").style.display = 'block';
-})
-
-// total prototype
-ceklismenu.forEach((menu) => {
-	var txtjumlahmenu = "txt" + menu.id;
-	var jumlahmenu = document.getElementById(txtjumlahmenu);
-	jumlahmenu.addEventListener("input", function total() {
-			jumlahtotal = 0;
-			txttotal.innerText = jumlahtotal
-			switch (menu.value) {
-				case "Nasi Goreng Biasa":
-					jumlahtotal += 8000 * jumlahmenu.value;
-					txttotal.innerText = jumlahtotal;
-					break;
-				case "Teh Dingin":
-					jumlahtotal += 3000 * jumlahmenu.value;
-					txttotal.innerText = jumlahtotal;
-					break;
-			}
-	})
-	// menu.addEventListener("click", function total() {
-	// 	if (menu.checked == true) {
-	// 		switch (menu.value) {
-	// 			case "Nasi Goreng Biasa":
-	// 				jumlahtotal += 8000 * jumlahmenu.value;
-	// 				txttotal.innerText = jumlahtotal;
-	// 				break;
-	// 		}
-	// 	} else {
-	// 		console.log("menu unchecked");
-	// 	}
-	// })
 })
